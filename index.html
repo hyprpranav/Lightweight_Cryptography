@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy and Security in IoT | ECC 1296</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Matrix Canvas Background -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">ECC 1296</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#challenges" class="nav-link">Security Challenges</a></li>
+                <li><a href="#cryptography" class="nav-link">Cryptography</a></li>
+                <li><a href="#lightweight" class="nav-link">Lightweight Crypto</a></li>
+                <li><a href="#applications" class="nav-link">Applications</a></li>
+                <li><a href="#future" class="nav-link">Future Scope</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="glitch" data-text="Privacy and Security in IoT">Privacy and Security in IoT</h1>
+                <p class="subject-code">Subject Code: <span class="highlight">ECC 1296</span></p>
+            </div>
+            <div class="content-box">
+                <p class="intro-text">
+                    The <strong class="highlight">Internet of Things (IoT)</strong> represents a revolutionary paradigm where billions of interconnected devices communicate, collect, and exchange data autonomously. From smart homes to industrial automation, IoT has transformed how we interact with technology.
+                </p>
+                <p class="intro-text">
+                    However, this connectivity brings unprecedented <strong class="highlight">security challenges</strong>. Unlike traditional computing systems, IoT devices operate under severe resource constraints—limited processing power, memory, and battery life—making conventional security mechanisms impractical.
+                </p>
+                <div class="key-points">
+                    <h3>Why Security Matters in IoT:</h3>
+                    <ul>
+                        <li><span class="bullet-highlight">Privacy Protection:</span> IoT devices collect sensitive personal and organizational data</li>
+                        <li><span class="bullet-highlight">Critical Infrastructure:</span> IoT powers healthcare, transportation, and industrial systems</li>
+                        <li><span class="bullet-highlight">Attack Surface:</span> Billions of devices create massive vulnerability exposure</li>
+                        <li><span class="bullet-highlight">Real-world Impact:</span> Security breaches can have physical consequences</li>
+                    </ul>
+                </div>
+                <p class="intro-text">
+                    This seminar explores the security landscape of IoT systems, focusing on cryptographic solutions tailored for resource-constrained devices, aligned with the <strong class="highlight">ECC 1296</strong> curriculum.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IoT Security Challenges Section -->
+    <section id="challenges" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>IoT Security Challenges</h2>
+            </div>
+            <div class="content-box">
+                <p>
+                    IoT devices face unique security vulnerabilities stemming from their inherent design constraints. Unlike traditional computers, these devices must balance functionality with severe limitations in resources, making them attractive targets for attackers.
+                </p>
+                
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3 class="highlight">Resource Constraints</h3>
+                        <ul>
+                            <li>Limited CPU processing power (8-32 bit processors)</li>
+                            <li>Minimal RAM (4KB - 128KB typical)</li>
+                            <li>Restricted energy budgets (battery-powered)</li>
+                            <li>Low bandwidth communication channels</li>
+                        </ul>
+                    </div>
+
+                    <div class="challenge-card">
+                        <h3 class="highlight">Common Attack Vectors</h3>
+                        <ul>
+                            <li><strong>DDoS Attacks:</strong> Compromised devices form botnets (Mirai botnet)</li>
+                            <li><strong>Eavesdropping:</strong> Unencrypted communication interception</li>
+                            <li><strong>Man-in-the-Middle:</strong> Data manipulation during transmission</li>
+                            <li><strong>Physical Tampering:</strong> Direct device access and modification</li>
+                        </ul>
+                    </div>
+
+                    <div class="challenge-card">
+                        <h3 class="highlight">Security Gaps</h3>
+                        <ul>
+                            <li>Hardcoded default credentials</li>
+                            <li>Lack of secure update mechanisms</li>
+                            <li>Insufficient authentication protocols</li>
+                            <li>Poor encryption implementation</li>
+                        </ul>
+                    </div>
+
+                    <div class="challenge-card">
+                        <h3 class="highlight">Why Traditional Security Fails</h3>
+                        <ul>
+                            <li><strong>Computational Overhead:</strong> Standard encryption (RSA, AES-256) too heavy</li>
+                            <li><strong>Power Consumption:</strong> Complex algorithms drain batteries rapidly</li>
+                            <li><strong>Latency Issues:</strong> Real-time requirements conflict with security processing</li>
+                            <li><strong>Memory Footprint:</strong> Security software exceeds available storage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h3>Understanding IoT Security Threats</h3>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/qhA3TUUlZGU" 
+                        title="IoT Security" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cryptography Challenge Section -->
+    <section id="cryptography" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cryptography Challenge</h2>
+            </div>
+            <div class="content-box">
+                <p>
+                    <strong class="highlight">Cryptography</strong> is the science of securing communication and data through mathematical algorithms. It serves as the foundation for protecting information in the digital age, ensuring three fundamental security properties.
+                </p>
+
+                <div class="crypto-pillars">
+                    <div class="pillar-card">
+                        <h3 class="highlight">Confidentiality</h3>
+                        <p>Ensures that information is accessible only to authorized parties. Encryption transforms plaintext into ciphertext, making data unreadable to unauthorized interceptors.</p>
+                        <div class="example">Example: AES encryption protects data during transmission</div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <h3 class="highlight">Integrity</h3>
+                        <p>Guarantees that data has not been tampered with or altered during storage or transmission. Hash functions and digital signatures detect unauthorized modifications.</p>
+                        <div class="example">Example: SHA-256 hashing verifies file authenticity</div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <h3 class="highlight">Authentication</h3>
+                        <p>Verifies the identity of communicating parties, ensuring data originates from legitimate sources. Prevents impersonation and spoofing attacks.</p>
+                        <div class="example">Example: Digital certificates validate device identity</div>
+                    </div>
+                </div>
+
+                <div class="content-subsection">
+                    <h3>The IoT Cryptography Dilemma</h3>
+                    <p>
+                        Traditional cryptographic algorithms were designed for systems with abundant computational resources. However, IoT devices operate under severe constraints:
+                    </p>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="bullet-highlight">Performance Bottleneck:</span> RSA-2048 operations take seconds on IoT processors</li>
+                            <li><span class="bullet-highlight">Energy Drain:</span> Complex encryption reduces battery life by 40-60%</li>
+                            <li><span class="bullet-highlight">Memory Overflow:</span> Standard crypto libraries exceed available RAM</li>
+                            <li><span class="bullet-highlight">Latency Impact:</span> Security processing delays time-critical operations</li>
+                        </ul>
+                    </div>
+                    <p>
+                        This creates a critical trade-off: <strong class="highlight">How do we implement robust security without overwhelming resource-constrained devices?</strong> The answer lies in specialized cryptographic approaches designed specifically for IoT environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightweight Cryptography Section -->
+    <section id="lightweight" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lightweight Cryptography</h2>
+            </div>
+            <div class="content-box">
+                <p>
+                    <strong class="highlight">Lightweight Cryptography</strong> represents a specialized branch of cryptographic design optimized for resource-constrained environments. These algorithms provide adequate security while minimizing computational overhead, power consumption, and memory requirements.
+                </p>
+
+                <div class="lwc-comparison">
+                    <div class="comparison-box">
+                        <h3 class="highlight">Traditional Cryptography</h3>
+                        <ul>
+                            <li>Designed for powerful systems</li>
+                            <li>Large key sizes (2048-4096 bits)</li>
+                            <li>Complex operations (modular exponentiation)</li>
+                            <li>High memory footprint (>10KB)</li>
+                            <li>Examples: RSA, AES-256, SHA-512</li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-box highlight-box">
+                        <h3 class="highlight">Lightweight Cryptography</h3>
+                        <ul>
+                            <li>Optimized for constrained devices</li>
+                            <li>Smaller key sizes (80-128 bits)</li>
+                            <li>Efficient operations (bitwise, shifts)</li>
+                            <li>Minimal memory (<2KB)</li>
+                            <li>Examples: PRESENT, SPECK, SIMON</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lwc-algorithms">
+                    <h3>Popular Lightweight Algorithms</h3>
+                    
+                    <div class="algo-card">
+                        <h4 class="highlight">PRESENT (Block Cipher)</h4>
+                        <p>Ultra-lightweight block cipher with 64-bit block size and 80/128-bit keys. Designed for RFID and sensor networks with hardware efficiency in mind.</p>
+                        <div class="specs">
+                            <span><strong>Gate Count:</strong> 1,570 GE</span>
+                            <span><strong>Power:</strong> Ultra-low</span>
+                            <span><strong>Use Case:</strong> RFID tags</span>
+                        </div>
+                    </div>
+
+                    <div class="algo-card">
+                        <h4 class="highlight">SPECK & SIMON</h4>
+                        <p>Family of lightweight block ciphers developed by NSA. Optimized for both software and hardware implementations with excellent performance on 8-bit microcontrollers.</p>
+                        <div class="specs">
+                            <span><strong>Block Size:</strong> 32-128 bits</span>
+                            <span><strong>Speed:</strong> High</span>
+                            <span><strong>Use Case:</strong> General IoT</span>
+                        </div>
+                    </div>
+
+                    <div class="algo-card">
+                        <h4 class="highlight">ChaCha20</h4>
+                        <p>Modern stream cipher providing high security and performance. Resistant to timing attacks and widely adopted in TLS and mobile protocols.</p>
+                        <div class="specs">
+                            <span><strong>Speed:</strong> Very high on ARM</span>
+                            <span><strong>Security:</strong> 256-bit</span>
+                            <span><strong>Use Case:</strong> Mobile/IoT communication</span>
+                        </div>
+                    </div>
+
+                    <div class="algo-card">
+                        <h4 class="highlight">ECC (Elliptic Curve Cryptography)</h4>
+                        <p>Public-key cryptography offering equivalent security to RSA with much smaller key sizes. Ideal for IoT authentication and key exchange.</p>
+                        <div class="specs">
+                            <span><strong>Key Size:</strong> 256-bit ≈ RSA-3072</span>
+                            <span><strong>Efficiency:</strong> 10x faster</span>
+                            <span><strong>Use Case:</strong> Authentication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h3>Lightweight Cryptography Explained</h3>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/x1v2tX4_dkQ" 
+                        title="Lightweight Cryptography" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="key-benefits">
+                    <h3>Benefits of Lightweight Cryptography</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⚡</span>
+                            <h4>Energy Efficiency</h4>
+                            <p>Extends battery life by 3-5x compared to traditional crypto</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔒</span>
+                            <h4>Adequate Security</h4>
+                            <p>Provides sufficient protection for IoT threat models</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⚙️</span>
+                            <h4>Low Overhead</h4>
+                            <p>Minimal processing and memory requirements</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🚀</span>
+                            <h4>Fast Execution</h4>
+                            <p>Meets real-time constraints of IoT applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real-World Applications</h2>
+            </div>
+            <div class="content-box">
+                <p>
+                    Lightweight cryptography enables secure IoT deployments across critical sectors. These implementations demonstrate how optimized security solutions protect sensitive data while maintaining operational efficiency in resource-constrained environments.
+                </p>
+
+                <div class="application-grid">
+                    <div class="app-card">
+                        <div class="app-icon">🏥</div>
+                        <h3 class="highlight">Healthcare Wearables</h3>
+                        <p>
+                            Smartwatches, fitness trackers, and medical monitors continuously collect sensitive health data including heart rate, blood glucose, and activity patterns.
+                        </p>
+                        <div class="app-details">
+                            <h4>Security Requirements:</h4>
+                            <ul>
+                                <li>Patient data privacy (HIPAA compliance)</li>
+                                <li>Authentication with medical systems</li>
+                                <li>Integrity of vital sign measurements</li>
+                            </ul>
+                            <h4>LWC Implementation:</h4>
+                            <p>ECC for device pairing, ChaCha20 for data encryption, consuming <5% battery per day</p>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-icon">⚡</div>
+                        <h3 class="highlight">Smart Grid Systems</h3>
+                        <p>
+                            Intelligent power distribution networks with millions of smart meters and control devices managing energy flow and consumption monitoring.
+                        </p>
+                        <div class="app-details">
+                            <h4>Security Requirements:</h4>
+                            <ul>
+                                <li>Protection against grid manipulation</li>
+                                <li>Secure meter readings and billing data</li>
+                                <li>Authenticate control commands</li>
+                            </ul>
+                            <h4>LWC Implementation:</h4>
+                            <p>PRESENT cipher for meter communications, ECC for command authentication, minimal latency</p>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-icon">🏭</div>
+                        <h3 class="highlight">Industrial Automation</h3>
+                        <p>
+                            Factory sensors, programmable logic controllers (PLCs), and robotic systems coordinating manufacturing processes in real-time.
+                        </p>
+                        <div class="app-details">
+                            <h4>Security Requirements:</h4>
+                            <ul>
+                                <li>Protect intellectual property and processes</li>
+                                <li>Prevent sabotage and unauthorized control</li>
+                                <li>Ensure safety-critical system integrity</li>
+                            </ul>
+                            <h4>LWC Implementation:</h4>
+                            <p>SIMON/SPECK for sensor data, message authentication codes for command verification</p>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-icon">🌆</div>
+                        <h3 class="highlight">Smart Cities</h3>
+                        <p>
+                            Connected infrastructure including traffic management, environmental monitoring, public safety systems, and intelligent lighting networks.
+                        </p>
+                        <div class="app-details">
+                            <h4>Security Requirements:</h4>
+                            <ul>
+                                <li>Secure citizen data and privacy</li>
+                                <li>Prevent infrastructure manipulation</li>
+                                <li>Authenticate emergency system access</li>
+                            </ul>
+                            <h4>LWC Implementation:</h4>
+                            <p>Hybrid approach: lightweight ciphers for sensors, ECC for cloud gateway authentication</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h3>IoT Security in Practice</h3>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/LcoOV9Cr7IY" 
+                        title="IoT Applications" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>Case Study: Securing Smart Home Devices</h3>
+                    <p>
+                        A major smart home manufacturer implemented lightweight cryptography across their device ecosystem (door locks, cameras, thermostats). Results showed:
+                    </p>
+                    <ul>
+                        <li><span class="bullet-highlight">Security:</span> Zero successful breaches in 2-year deployment</li>
+                        <li><span class="bullet-highlight">Performance:</span> 85% reduction in cryptographic processing time</li>
+                        <li><span class="bullet-highlight">Battery Life:</span> Extended by 40% compared to previous implementation</li>
+                        <li><span class="bullet-highlight">Cost:</span> 15% lower implementation cost vs. traditional solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Scope Section -->
+    <section id="future" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Future Scope</h2>
+            </div>
+            <div class="content-box">
+                <p>
+                    The landscape of IoT security continues to evolve rapidly. Emerging technologies and research initiatives are shaping the next generation of cryptographic solutions for resource-constrained environments.
+                </p>
+
+                <div class="future-trends">
+                    <div class="trend-card">
+                        <h3 class="highlight">AI-Assisted Security</h3>
+                        <p>
+                            Machine learning algorithms are being integrated into IoT security frameworks to provide adaptive threat detection and response capabilities.
+                        </p>
+                        <div class="trend-details">
+                            <h4>Key Developments:</h4>
+                            <ul>
+                                <li><strong>Anomaly Detection:</strong> ML models identify unusual device behavior patterns</li>
+                                <li><strong>Intrusion Prevention:</strong> Real-time threat identification using lightweight neural networks</li>
+                                <li><strong>Adaptive Encryption:</strong> Dynamic security level adjustment based on threat assessment</li>
+                                <li><strong>Federated Learning:</strong> Collaborative security without centralized data collection</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="trend-card">
+                        <h3 class="highlight">Post-Quantum Cryptography</h3>
+                        <p>
+                            Preparing for quantum computing threats by developing quantum-resistant lightweight algorithms for IoT devices.
+                        </p>
+                        <div class="trend-details">
+                            <h4>Research Focus:</h4>
+                            <ul>
+                                <li><strong>Lattice-Based Crypto:</strong> Quantum-resistant with reasonable efficiency</li>
+                                <li><strong>Hash-Based Signatures:</strong> SPHINCS+ for IoT authentication</li>
+                                <li><strong>Code-Based Schemes:</strong> McEliece variants for constrained devices</li>
+                                <li><strong>Hybrid Approaches:</strong> Combining classical and quantum-safe methods</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="trend-card">
+                        <h3 class="highlight">Standardization Efforts</h3>
+                        <p>
+                            International organizations are establishing standards and best practices for lightweight cryptography deployment.
+                        </p>
+                        <div class="trend-details">
+                            <h4>Major Initiatives:</h4>
+                            <ul>
+                                <li><strong>NIST LWC Project:</strong> Standardizing lightweight authenticated encryption</li>
+                                <li><strong>ISO/IEC 29192:</strong> Lightweight cryptography standards series</li>
+                                <li><strong>IETF Protocols:</strong> CoAP, DTLS adaptations for IoT</li>
+                                <li><strong>Industry Consortiums:</strong> IoT Security Foundation, Zigbee Alliance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="trend-card">
+                        <h3 class="highlight">Hardware Security</h3>
+                        <p>
+                            Integration of hardware-based security features directly into IoT chip designs for enhanced protection.
+                        </p>
+                        <div class="trend-details">
+                            <h4>Emerging Technologies:</h4>
+                            <ul>
+                                <li><strong>PUF (Physical Unclonable Functions):</strong> Device-unique cryptographic keys</li>
+                                <li><strong>Secure Enclaves:</strong> ARM TrustZone for IoT processors</li>
+                                <li><strong>Crypto Accelerators:</strong> Dedicated hardware for lightweight algorithms</li>
+                                <li><strong>Side-Channel Protection:</strong> Built-in countermeasures against attacks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-areas">
+                    <h3>Active Research Directions</h3>
+                    <div class="research-grid">
+                        <div class="research-item">
+                            <h4 class="highlight">Blockchain for IoT</h4>
+                            <p>Decentralized security using lightweight consensus mechanisms and distributed ledger technology for device authentication and data integrity.</p>
+                        </div>
+                        <div class="research-item">
+                            <h4 class="highlight">Edge Computing Security</h4>
+                            <p>Moving security processing to edge nodes, reducing device burden while maintaining protection through distributed architecture.</p>
+                        </div>
+                        <div class="research-item">
+                            <h4 class="highlight">Zero Trust IoT</h4>
+                            <p>Implementing zero-trust architectures where no device is implicitly trusted, requiring continuous verification with minimal overhead.</p>
+                        </div>
+                        <div class="research-item">
+                            <h4 class="highlight">Energy Harvesting Security</h4>
+                            <p>Cryptographic protocols optimized for devices powered by ambient energy sources with unpredictable power availability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <h3>Expected Developments Timeline</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026-2027</div>
+                        <div class="timeline-content">
+                            <p>NIST finalizes lightweight cryptography standards; wider adoption in commercial IoT products</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2028-2030</div>
+                        <div class="timeline-content">
+                            <p>Post-quantum lightweight algorithms become practical; AI-based security becomes mainstream</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2031+</div>
+                        <div class="timeline-content">
+                            <p>Fully integrated hardware-software security ecosystems; quantum-safe IoT infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Information</h2>
+            </div>
+            <div class="content-box">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <h3 class="highlight">Harish Pranav S</h3>
+                        <p class="contact-subtitle">Privacy and Security in IoT</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📚</span>
+                            <div>
+                                <strong>Subject:</strong> Privacy and Security in IoT
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🔢</span>
+                            <div>
+                                <strong>Subject Code:</strong> <span class="highlight">ECC 1296</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>Email:</strong> <a href="mailto:harishpranavs259@gmail.com" class="contact-link">harishpranavs259@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <strong>Phone:</strong> 91+ 7845693765
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-footer">
+                        <p>For inquiries about the seminar, course materials, or collaboration opportunities, feel free to reach out via email.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Privacy and Security in IoT | ECC 1296</p>
+            <p>Developed for educational purposes</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
